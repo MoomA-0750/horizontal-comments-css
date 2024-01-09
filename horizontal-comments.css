@@ -1,0 +1,247 @@
+:root {
+    /* ユーザーネームの文字色 */
+    --username-color: rgba(255, 255, 255, 0.7);
+    /* メンバー加入ユーザーの文字色 */
+    --membership-user-color: #FFCDE5;
+    /* チャット本文の文字色 */
+    --message-color: #fff;
+    /* 本文アウトライン色 (4個目の数字を0にして無効化) */
+    --message-outline-color: rgba(0,0,0,0.35);
+    /* 本文文字サイズ */
+    --font-size: 20px;
+    /* 本文列高さ */
+    --line-height: 24px;
+    /* フォント */
+    --font: "LINE Seed JP_OTF";
+    /*コメントと名前の空間*/
+    --space: 4px;
+    /* コメント間の空間 */
+    --gap: 50px;
+    /*底の高さ*/
+    --floor: 10px;
+  }
+  
+  /* 背景色 */
+  body {
+    background-color: rgba(0, 0, 0, 0) !important;
+    font-family: var(--font), sans-serif;
+  }
+  
+  /* 背景透過 */
+  yt-live-chat-renderer,
+  yt-live-chat-text-message-renderer {
+      background-color: transparent !important;
+  }
+  
+  /* ヘッダーと入力欄 */
+  #panel-pages,
+  yt-live-chat-ticker-renderer,
+  yt-live-chat-header-renderer,
+  yt-live-chat-message-input-renderer {
+      display: none !important;
+  }
+  
+  /* チャンネルアイコン */
+  yt-img-shadow {
+      display: none !important;
+  }
+  
+  /* 名前たち */
+  yt-live-chat-author-chip {
+    align-items: center;
+    margin: 0 !important;
+    min-height: 25px;
+  }
+  
+  yt-live-chat-text-message-renderer yt-live-chat-author-chip {
+    padding: 0 0 0 15px !important;
+  }
+  
+  yt-live-chat-text-message-renderer yt-live-chat-author-chip {
+    margin-top: var(--space) !important;
+    margin-bottom: var(--floor) !important;
+  }
+  
+  /* タイムスタンプ */
+  #timestamp {
+    display: none !important;
+    margin: 0 !important;
+  }
+  
+  /* 名前 */
+  yt-live-chat-author-chip #author-name {
+    color: var( --username-color); !important;
+    font-size: 14px;
+  }
+  
+  yt-live-chat-author-chip .member {
+    color: var(--membership-user-color) !important;
+  }
+  
+  /* メンバーバッジ */
+  yt-live-chat-author-badge-renderer {
+    margin: 0 !important;
+  }
+  
+  yt-live-chat-author-badge-renderer #image {
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+  }
+  
+  /* メッセージ */
+  yt-live-chat-text-message-renderer #message {
+    color: var(--message-color) !important;
+    font-size: var(--font-size);
+    line-height: var(--line-height) !important;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.50), 0px 1px 8px rgba(0, 0, 0, 0.50);
+      -webkit-text-stroke: 0.5px var(--message-outline-color);
+    font-weight: 600;
+    overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+    padding: 5px 15px;
+    max-height: calc((var(--line-height) * 2) - 5px);
+  }
+  
+  yt-live-chat-text-message-renderer .emoji {
+    width: var(--font-size) !important;
+    height: var(--font-size) !important;
+  }
+  
+  /* ボタン類 */
+  yt-live-chat-item-list-renderer #show-more {
+    display: none !important;
+  }
+  
+  yt-live-chat-item-list-renderer #style-scope yt-live-chat-item-list-renderer {
+    display: none !important;
+  }
+  
+  #menu {
+    display: none !important;
+  }
+  
+  /* メンバー加入 */
+  yt-live-chat-membership-item-renderer {
+    min-width: 200px;
+    max-width: 580px;
+    padding: 0 !important;
+    display: flex;
+    flex-shrink: 0;
+  }
+  
+  yt-live-chat-membership-item-renderer #card {
+    flex-direction: column-reverse !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+  
+  yt-live-chat-membership-item-renderer #header-content-primary-column {
+      display: flex;
+    flex-direction: row !important;
+    gap: 10px;
+    align-items: center !important;
+    margin-top: calc(var(--space) - 4px) !important;
+    margin-bottom: var(--floor) !important;
+    height: 25px !important;
+  }
+  
+  yt-live-chat-membership-item-renderer #header {
+      background: transparent !important;
+    padding: 0 !important;
+  }
+  
+  yt-live-chat-membership-item-renderer #header-primary-text {
+      display: none !important;
+  }
+  
+  yt-live-chat-membership-item-renderer #header-subtext {
+    color: var(--username-color) !important;
+    margin: 2px 0 0 0 !important;
+  }
+  
+  yt-live-chat-membership-item-renderer #content {
+    background-color: #DE639E !important;
+    padding: 10px 15px !important;
+    border-radius: 10px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+  }
+  
+  yt-live-chat-membership-item-renderer #message {
+    font-size: calc(var(--font-size) - 4px);
+    line-height: calc(var(--line-height) - 4px);
+    overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+  }
+  
+  yt-live-chat-membership-item-renderer .emoji {
+    width: calc(var(--font-size) - 4px) !important;
+    height: calc(var(--font-size) - 4px) !important;
+  }
+  
+  /* 上の青いチャット */
+  yt-live-chat-item-list-renderer #live-chat-banner {
+    display: none;
+  }
+  
+  /* Reduce side padding - 余白設定 */
+  yt-live-chat-text-message-renderer {
+    padding-left: 0 !important;
+    padding-right: var(--gap) !important;
+    flex-shrink: 0;
+    align-content: end !important;
+  }
+  
+  yt-live-chat-text-message-renderer #content {
+    display: flex;
+    flex-direction: column-reverse !important;
+    max-width: 580px;
+    align-self: end !important;
+    font-size: 0;
+  }
+  
+  /* スクロールバー消す */
+  yt-live-chat-item-list-renderer[allow-scroll] #item-scroller.yt-live-chat-item-list-renderer {
+    overflow-y: hidden !important;
+  }
+  
+  /* ハート消す */
+  yt-reaction-control-panel-overlay-view-model,
+  yt-reaction-control-panel-view-model {
+      display: none;
+  }
+  
+  yt-live-chat-renderer {
+    --scrollbar-width: 0px !important;
+  }
+  
+  /* リスト横表示 */
+  yt-live-chat-item-list-renderer #items {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    bottom:0;
+    background: linear-gradient(180deg, rgba(72, 32, 51, 0) 0%, rgba(72, 32, 51, 0.7) 100%);
+  }
+  
+  yt-live-chat-viewer-engagement-message-renderer {
+    display: none !important;
+  }
+  
+  yt-live-chat-server-error-message {
+    display: none !important;
+  }
+  
+  yt-live-chat-author-badge-renderer #image {
+    height: 25px;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
